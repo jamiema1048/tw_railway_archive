@@ -20,7 +20,7 @@ export default function Home(): React.ReactElement {
       </Head>
 
       <h1 className="text-5xl font-semibold text-white-800 text-center">
-        歡迎來到小雨的公路資料網站
+        歡迎來到小雨的鐵路車站資料網站
       </h1>
 
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
