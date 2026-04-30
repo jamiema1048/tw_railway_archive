@@ -183,7 +183,7 @@ export default function StationClient({
           <h2 className="text-xl mt-6 mb-5 text-black dark:text-white font-semibold">
             所屬路線：
           </h2>
-          <ul className="list-disc pl-5">
+          <ul className="list-disc pl-5 flex items-center gap-2 flex-wrap">
             {station.line.map((line) => {
               // 1. 利用 find 找不到會回傳 undefined 的特性，搭配 || 做預設值
               const railwayName =
