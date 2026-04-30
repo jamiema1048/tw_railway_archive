@@ -91,8 +91,10 @@ export default function StationClient({
         <title>{title}</title>
       </Head>
       <main className="p-4 text-white">
-        <h1 className="text-3xl font-bold mb-4">{station.name}</h1>
-        <p>
+        <h1 className="text-3xl text-black dark:text-white font-bold mb-4">
+          {station.name}
+        </h1>
+        <p className="text-black dark:text-white">
           狀態：
           {station.status === "active"
             ? "營運中"
@@ -102,47 +104,49 @@ export default function StationClient({
         </p>
 
         <section className="route-info bg-black-100 p-6 rounded-lg mt-8">
-          <h2 className="text-3xl font-semibold mb-4">車站資料</h2>
+          <h2 className="text-3xl text-black dark:text-white font-semibold mb-4">
+            車站資料
+          </h2>
           {station.openDate && (
-            <h3 className="text-xl mb-4">
+            <h3 className="text-xl text-black dark:text-white mb-4">
               <strong>設站日期:</strong> {station.openDate.join("、")}
             </h3>
           )}
           {station.closeDate && (
-            <h3 className="text-xl mb-4">
+            <h3 className="text-xl text-black dark:text-white mb-4">
               <strong>廢止日期:</strong> {station.closeDate.join("、")}
             </h3>
           )}
           {station.originalName && (
-            <h3 className="text-xl mb-4">
+            <h3 className="text-xl text-black dark:text-white mb-4">
               <strong>舊名:</strong> {station.originalName.join("、")}
             </h3>
           )}
 
           {station.level && (
-            <h3 className="text-xl mb-4">
+            <h3 className="text-xl text-black dark:text-white mb-4">
               <strong>站等:</strong> {station.level}
             </h3>
           )}
           {station.miles && (
-            <h3 className="text-xl mb-4">
+            <h3 className="text-xl text-black dark:text-white mb-4">
               <strong>里程:</strong> {station.miles.join("、")}
             </h3>
           )}
           {station.height && (
-            <h3 className="text-xl mb-4">
+            <h3 className="text-xl text-black dark:text-white mb-4">
               <strong>海拔高度:</strong> {station.height}
             </h3>
           )}
           {station.stationCode && (
-            <h3 className="text-xl mb-4">
+            <h3 className="text-xl text-black dark:text-white mb-4">
               <strong>代碼:</strong> {station.stationCode}
             </h3>
           )}
         </section>
 
         <section className="media-gallery mt-12">
-          <h2 className="text-2xl font-semibold mb-4 auto-rows-auto">
+          <h2 className="text-2xl text-black dark:text-white font-semibold mb-4 auto-rows-auto">
             Images and Descriptions
           </h2>
           {station.images && (
@@ -160,10 +164,12 @@ export default function StationClient({
                     />
                   </div>
                   {img.description && (
-                    <p className="mt-2 text-sm sm:text-lg">{img.description}</p>
+                    <p className="mt-2 text-black dark:text-white text-sm sm:text-lg">
+                      {img.description}
+                    </p>
                   )}
                   {img.capturedAt && (
-                    <p className="mt-2 text-sm sm:text-lg">
+                    <p className="mt-2 text-black dark:text-white text-sm sm:text-lg">
                       {new Date(img.capturedAt).toISOString().split("T")[0]}
                     </p>
                   )}
@@ -174,7 +180,9 @@ export default function StationClient({
         </section>
 
         <div className="my-9">
-          <h2 className="text-xl mt-6 mb-5 font-semibold">所屬路線：</h2>
+          <h2 className="text-xl mt-6 mb-5 text-black dark:text-white font-semibold">
+            所屬路線：
+          </h2>
           <ul className="list-disc pl-5">
             {station.line.map((line) => {
               // 1. 利用 find 找不到會回傳 undefined 的特性，搭配 || 做預設值
@@ -199,7 +207,9 @@ export default function StationClient({
 
         {station.prevStation && (
           <div className="my-4 flex items-center gap-2 flex-wrap">
-            <span className="text-lg font-semibold">上一站：</span>
+            <span className="text-lg text-black dark:text-white font-semibold">
+              上一站：
+            </span>
             {Array.isArray(station.prevStation)
               ? station.prevStation.map((id) => {
                   const match = adjacentStations.find(
@@ -252,7 +262,9 @@ export default function StationClient({
 
         {station.nextStation && (
           <div className="my-4 flex items-center gap-2 flex-wrap">
-            <span className="text-lg font-semibold">下一站：</span>
+            <span className="text-lg text-black dark:text-white font-semibold">
+              下一站：
+            </span>
             {Array.isArray(station.nextStation)
               ? station.nextStation.map((id) => {
                   const match = adjacentStations.find(

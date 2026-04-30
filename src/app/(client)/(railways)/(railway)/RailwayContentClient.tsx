@@ -76,7 +76,7 @@ export default function RailwayContentClient({ data, stations }: Props) {
         <title>{title}</title>
       </Head>
       <div className="max-w-4xl mx-auto px-4 py-6">
-        <h1 className="text-4xl font-extrabold text-white mb-6 border-b pb-2">
+        <h1 className="text-4xl font-extrabold text-black dark:text-white mb-6 border-b pb-2">
           {data.name}
         </h1>
         <div className="space-y-8">

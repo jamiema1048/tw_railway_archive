@@ -110,7 +110,7 @@ const DistrictGroupedStations: React.FC<DistrictGroupedStationsProps> = ({
             <div className="mb-2">
               <Link
                 href={`/railways/${district.prevArea}`}
-                className="text-blue-400 text-sm hover:underline"
+                className="text-blue-400 text-sm text-black dark:text-white hover:underline"
               >
                 ↑ 上接區段
               </Link>
@@ -124,7 +124,7 @@ const DistrictGroupedStations: React.FC<DistrictGroupedStationsProps> = ({
                   <div
                     className={`text-xl transition-all ${
                       station.status === "active"
-                        ? "text-white"
+                        ? "text-black dark:text-white"
                         : station.status === "disused"
                           ? "text-gray-500 line-through"
                           : "text-blue-400 italic"
